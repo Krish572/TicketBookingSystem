@@ -8,12 +8,15 @@ public class Train {
     private String trainId;
     private String trainNo;
     private List<List<Integer>> seats;
+    private int seatsAvailable;
     private Map<String, String> stationTimings;
     private List<String> stations;
 
     public Train(String trainNo, List<List<Integer>> seats, Map<String, String> stationTimings, List<String> stations) {
         this.trainId = UUID.randomUUID().toString();
+        this.trainNo = trainNo;
         this.seats = seats;
+        this.seatsAvailable = 24;
         this.stationTimings = stationTimings;
         this.stations = stations;
     }
@@ -21,6 +24,15 @@ public class Train {
     public Map<String, String> getStationTimings(){
         return this.stationTimings;
     }
+
+    public int getSeatsAvailable() {
+        return seatsAvailable;
+    }
+
+    public String getTrainId(){
+        return this.trainId;
+    }
+
 
     public List<List<Integer>> getSeats(){
         return this.seats;
